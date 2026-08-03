@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 240" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <style>
+    .role { opacity: 0; animation: cycle 9s ease-in-out infinite; }
+    .r1 { animation-delay: 0s; } .r2 { animation-delay: 3s; } .r3 { animation-delay: 6s; }
+    @keyframes cycle { 0% { opacity: 0; transform: translateY(8px); } 5% { opacity: 1; transform: translateY(0); } 30% { opacity: 1; } 36% { opacity: 0; transform: translateY(-8px); } 100% { opacity: 0; } }
+    .wave { animation: slide 14s linear infinite; }
+    @keyframes slide { 0% { transform: translateX(0); } 100% { transform: translateX(-300px); } }
+    .dot { animation: blink 4s ease-in-out infinite; }
+    .d2 { animation-delay: 1.3s; } .d3 { animation-delay: 2.6s; }
+    @keyframes blink { 0%, 100% { opacity: .25; } 50% { opacity: 1; } }
+    .underline { stroke-dasharray: 330; stroke-dashoffset: 330; animation: uline 9s ease-in-out infinite; }
+    @keyframes uline { 0% { stroke-dashoffset: 330; } 12% { stroke-dashoffset: 0; } 88% { stroke-dashoffset: 0; } 100% { stroke-dashoffset: 330; } }
+  </style>
+  <rect width="1200" height="240" rx="14" fill="#0a0f1e"/>
+  <rect width="1200" height="240" rx="14" fill="url(#g)"/>
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#2563eb" stop-opacity=".28"/>
+      <stop offset=".5" stop-color="#0a0f1e" stop-opacity="0"/>
+      <stop offset="1" stop-color="#059669" stop-opacity=".22"/>
+    </linearGradient>
+    <clipPath id="clip"><rect width="1200" height="240" rx="14"/></clipPath>
+  </defs>
+  <g clip-path="url(#clip)" opacity=".5">
+    <path class="wave" d="M0 205 Q 75 165 150 205 T 300 205 T 450 205 T 600 205 T 750 205 T 900 205 T 1050 205 T 1200 205 T 1350 205 T 1500 205 V 240 H 0 Z" fill="#1d4ed8" opacity=".28"/>
+    <path class="wave" style="animation-duration: 19s" d="M0 215 Q 75 185 150 215 T 300 215 T 450 215 T 600 215 T 750 215 T 900 215 T 1050 215 T 1200 215 T 1350 215 T 1500 215 V 240 H 0 Z" fill="#059669" opacity=".3"/>
+  </g>
+  <text x="64" y="106" fill="#f8fafc" font-size="52" font-weight="700">Felippe Yann</text>
+  <path class="underline" d="M66 126 H 396" stroke="#3b82f6" stroke-width="4" stroke-linecap="round" fill="none"/>
+  <g font-size="26" font-weight="600">
+    <text class="role r1" x="64" y="172" fill="#93c5fd">Data Science &#38; Statistical Modeling</text>
+    <text class="role r2" x="64" y="172" fill="#6ee7b7">LLM Engineering in Production</text>
+    <text class="role r3" x="64" y="172" fill="#fcd34d">Product Engineering, End to End</text>
+  </g>
+  <g>
+    <circle class="dot" cx="1048" cy="66" r="6" fill="#3b82f6"/>
+    <circle class="dot d2" cx="1076" cy="66" r="6" fill="#34d399"/>
+    <circle class="dot d3" cx="1104" cy="66" r="6" fill="#fbbf24"/>
+  </g>
+  <text x="1136" y="180" fill="#64748b" font-size="16" text-anchor="end">models &#183; pipelines &#183; dashboards &#183; shipped products</text>
+</svg>

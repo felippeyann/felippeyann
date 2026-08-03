@@ -1,4 +1,6 @@
-# Felippe Yann
+<p align="center">
+  <img src="assets/banner.svg" alt="Felippe Yann" width="100%">
+</p>
 
 Data science, machine learning and product engineering. I build data products end to end: statistical models, data pipelines, analytics dashboards and shipped SaaS products. Based in Brazil.
 
@@ -10,6 +12,25 @@ Data science, machine learning and product engineering. I build data products en
 | [sales-analytics-dashboards](https://github.com/felippeyann/sales-analytics-dashboards) | 8 interactive sales & marketing BI dashboards (vanilla JS + ECharts), built for a B2B SaaS revenue operation. [Live demo](https://felippeyann.github.io/sales-analytics-dashboards/) with synthetic data. |
 | [Auditor ATS](https://cvaudit.com.br) | AI resume analysis SaaS (B2C, Brazil), solo-built and running in production on a fully serverless Firebase stack. [Case study](case-studies/auditor-ats.md) |
 | Lexi | Personalized AI news curation app (Expo + Firebase), technical beta. [Case study](case-studies/lexi.md) |
+
+## Visual tour
+
+<table>
+  <tr>
+    <td width="34%">
+      <a href="https://felippeyann.github.io/sales-analytics-dashboards/"><img src="https://raw.githubusercontent.com/felippeyann/sales-analytics-dashboards/main/docs/previews/index.webp" alt="Dashboards live demo"></a>
+      <b>8 BI dashboards, live</b><br>Click and explore, no install
+    </td>
+    <td width="33%">
+      <a href="https://github.com/felippeyann/worldcup-2026-forecasting"><img src="https://raw.githubusercontent.com/felippeyann/worldcup-2026-forecasting/main/docs/mc_convergence.gif" alt="Monte Carlo convergence"></a>
+      <b>Monte Carlo in motion</b><br>P(champion) converging, real model output
+    </td>
+    <td width="33%">
+      <a href="https://github.com/felippeyann/worldcup-2026-forecasting"><img src="https://raw.githubusercontent.com/felippeyann/worldcup-2026-forecasting/main/docs/calibration.png" alt="Reliability diagram"></a>
+      <b>Calibration, measured</b><br>Reliability diagram over 100 real matches
+    </td>
+  </tr>
+</table>
 
 ## Case studies
 
