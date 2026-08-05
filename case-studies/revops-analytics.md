@@ -1,5 +1,7 @@
 # RevOps data platform for a financial-market consultancy
 
+> A reproducible LLM evaluation engine in production (two-call architecture, deterministic scoring) sitting on top of a health-checked operational data store that runs a live revenue operation.
+
 **Context**: a RevOps consultancy serving firms in the Brazilian financial market. I designed and operate the data layer behind its commercial operation. Company and clients are anonymized; no client data appears here.
 
 **My role**: data platform architecture, pipelines, LLM evaluation systems, analytics and data hygiene, working alongside the leadership team.

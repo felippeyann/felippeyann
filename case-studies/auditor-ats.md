@@ -1,5 +1,7 @@
 # Auditor ATS: a solo-built AI SaaS in production
 
+> A production AI product built and operated by one person: an LLM report pipeline with structured output, real payments, and a privacy-first data strategy where every completed audit compounds into a proprietary, anonymized dataset.
+
 **Product**: [cvaudit.com.br](https://cvaudit.com.br). AI resume analysis for the Brazilian job market: the user uploads a CV (PDF) and a job description, the system scores ATS compatibility (0-100), finds missing keywords and delivers a full HTML report by email. Micro-ticket pricing with four tiers and prepaid credit packages.
 
 **My role**: everything. Product, architecture, backend, frontend, prompts, payments, SEO, incident response.

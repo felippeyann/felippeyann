@@ -1,5 +1,7 @@
 # BI and analytics for a B2B CRM SaaS company
 
+> BI that ran a sales floor: eight interactive dashboards (published as synthetic-data demos), Python pipelines that ran unattended for months, and an LLM-assisted editorial system, all on deliberately boring, operable technology.
+
 **Context**: the revenue operation of a B2B SaaS company (CRM platform). I built the analytics layer used daily by SDR teams, sales managers and marketing. Company anonymized; the public demos use 100% synthetic data.
 
 **My role**: BI engineering end to end: data pipelines, dashboard engineering, AI-assisted editorial tooling.

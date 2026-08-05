@@ -1,5 +1,7 @@
 # Lexi: AI news curation, from RSS ingestion to adaptive synthesis
 
+> An AI product where trust is the feature: LLM synthesis with per-claim provenance, a resilient self-hosted ingestion stack with a real test suite, and pre-launch QA run as an engineering problem via browser automation.
+
 **Product**: Lexi, a personalized news curation app: the user picks sources and topics, the system ingests articles continuously, and an LLM produces "Lexis", synthesized briefings with adaptive depth (deep / focused / panorama modes), plus a daily digest and a weekly report. Technical beta (installable PWA + Expo builds), not yet in app stores.
 
 **My role**: solo design and build.
