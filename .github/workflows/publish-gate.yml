@@ -1,0 +1,56 @@
+name: publish-gate
+
+# Portão de publicação: reprova o push se vazar segredo ou nome proibido.
+# Fonte da rotina: felippeyann/portfolio (privado) -> MANUTENCAO.md secao 1.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  secrets-and-names:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: gitleaks (segredos)
+        run: |
+          V=8.18.4
+          curl -sSfL "https://github.com/gitleaks/gitleaks/releases/download/v${V}/gitleaks_${V}_linux_x64.tar.gz" | tar -xz gitleaks
+          ./gitleaks dir . --no-banner --redact --exit-code 1
+
+      - name: nomes e infra proibidos (anonimizacao)
+        run: |
+          # exclui .git e .github (este workflow contem os proprios termos)
+          if grep -rInE "AAWZ|Clint|Giovani|Bucco|LexiNews|clint\.digital|fyclint|AIzaSy[0-9A-Za-z_-]{10}|gserviceaccount|spreadsheets/d/[A-Za-z0-9_-]{20}" . \
+               --include="*.md" --include="*.html" --include="*.py" --include="*.js" --include="*.css" --include="*.csv" --include="*.svg" \
+               --exclude-dir=.git --exclude-dir=.github ; then
+            echo "::error::Nome de cliente / segredo encontrado acima. Anonimize antes de publicar (ver MANUTENCAO.md)."
+            exit 1
+          fi
+          echo "OK: nenhum nome proibido."
+
+      - name: travessao em copy (regra da casa)
+        run: |
+          if grep -rn "\xE2\x80\x94" . --include="*.md" --exclude-dir=.git --exclude-dir=.github ; then
+            echo "::warning::Travessao (—) encontrado em Markdown. Trocar por virgula/ponto/dois-pontos."
+          fi
+
+  linkcheck:
+    runs-on: ubuntu-latest
+    continue-on-error: true   # informativo, nao bloqueia o push
+    steps:
+      - name: URLs-chave respondem?
+        run: |
+          for u in https://felippeyann.github.io/ https://cvaudit.com.br ; do
+            code=$(curl -s -o /dev/null -w "%{http_code}" -I --max-time 25 "$u" || echo "000")
+            echo "$code  $u"
+            case "$code" in 2*|3*) ;; *) echo "::warning::$u respondeu $code" ;; esac
+          done
